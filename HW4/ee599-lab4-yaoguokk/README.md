@@ -1,6 +1,5 @@
 ###File: BrokenASan.cpp & EE599_Lab4_2176023892.cpp  
-Author: YaoGuo  
-USCID: 2176023892  
+Author: YaoGuo   
 Email: yaog@usc.edu  
 Description: This first part of readfile is to describe how to use ASAN to debug the BrokenASan.cpp file. 
 The second part is to describe a sorting criteria which apply to pancake sorting. 
