@@ -1,12 +1,12 @@
-Final Distance of SA Method: 30107
-2
-10
-6
-1
-9
+Final Distance of SA Method: 30344
 5
-8
-4
 3
+9
+1
+6
 7
+10
 2
+4
+8
+5
