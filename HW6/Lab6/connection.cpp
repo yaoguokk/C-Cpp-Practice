@@ -5,7 +5,7 @@ Connection::Connection(){
     set_connection();
 }
 
-
+Connection::~Connection(){delete birthdate;}
 Connection::Connection(string fname, string lname, string bdate){
     this->f_name = fname;
     this->l_name = lname;

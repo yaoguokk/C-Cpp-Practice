@@ -11,6 +11,8 @@ Network::Network(){
 Network::~Network(){
     // Destructure delete all the Connections
     // TODO: Complete this method
+    delete head;
+    delete tail;
     
 }
 
@@ -66,13 +68,18 @@ Connection* Network::search(Connection* searchEntry){
     // Use == overloaded operator for connection
     // if found, returns a pointer to it, else returns NULL
     // TODO: Complete this method!
-    Connection* temp = head;
-    while(temp->next != NULL){
-        if(temp == searchEntry)
+    Connection* temp = this->head;
+    while(temp!= NULL){
+        if(temp->operator==(*searchEntry)){
+            // if(*temp==*searchEntry){
+            // cout<<"find";
             return temp;
-        else 
-            temp = temp->next;
+        }
+        temp = (*temp).next;
+            
     }
+    
+    cout<<"not found";
     return NULL;
     
 }
@@ -96,7 +103,7 @@ void Network::saveDB(string filename){
     // TODO: Complete this method
     // TODO: Understand why it would be necessary to modify Date class now! 
     // TODO: Go back and uncomment get_date method in Date class (both .h and .cpp) 
-    ofstream outfile(filename);
+    ofstream outfile(filename.c_str());
     Connection* ptr = head;
     while (ptr != NULL){
         outfile << ptr->l_name<<", "<< ptr->f_name <<endl;
@@ -152,12 +159,21 @@ bool Network::remove(string fname, string lname, string bdate){
     // Don't forget to delete allocated memory, change count  and returning values!
     Connection *temp =new Connection(fname,lname,bdate);
     Connection *result = search(temp);
+    
     if(!result){
-      //  delete temp;
         return false;
     }else{
-        (result->prev)->next = result->next;
-        (result->next)->prev = result->prev;
+        Connection *before = result->prev;
+        Connection *after = result->next;
+        if(after!=NULL){
+            before->next=after;
+            after->prev=before;
+            tail = after;
+        }else{
+            before->next=NULL;
+            tail = before;
+        }
+        
         count--;
         return true;
     }

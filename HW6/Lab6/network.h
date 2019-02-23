@@ -22,6 +22,7 @@ class Network{
         void saveDB(string filename);
         void loadDB(string filename);
         void printDB();
+
 };
 
 #endif

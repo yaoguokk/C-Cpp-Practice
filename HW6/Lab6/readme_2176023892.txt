@@ -1,0 +1,42 @@
+File: date.h, date.cpp, connection.h, connection.cpp, network.h, network.cpp, sort.cpp, sort.h, wrapper.py    
+Author: YaoGuo  
+USCID: 2176023892  
+Email: yaog@usc.edu  
+Description: 
+date.cpp This file is about input a date and then output the date in different format. In this file, the input date will be checked if it is available. 
+
+Connection.cpp This file is about set connection, print connection and compare two connection to be same or not. 
+
+Network.cpp This file is implement the double linked list. Containing insert new item in the front and the tail of the linked list. Also we need to load data and output data using input stream and output stream. Plus we add remove item function which requires search function. 
+
+Sort.cpp We implement 5 sorting method (bubble, merge, quick, selection, radix sorts) using input file and output the result to an output file. 
+
+main.cpp This file is the main function to invoke the sort function. Note, when execute the ./test we need add 4 strings. Input.txt output.txt 32 bubbleSort as the parameters into the function. 
+
+wrapper.py We want to compare the speed of different sorting algorithms in different situations. This is why we are using C++ for the implementation of our sort algorithms, however, we would like to have our data flow to be in python. 
+
+
+Reference:
+
+EE599-Sorting.pdf Professor Shahin Nazarian. 
+
+line 56 - 59    
+EE599-Sorting.pdf Professor Shahin Nazarian. Slide page 9;
+I write the bubble sort algorithm referring to the pseudocode of slide.
+
+Line 71 - 85
+EE599-Sorting.pdf Professor Shahin Nazarian. Slide page 19;
+In order to write selection sort algorithm, I refer the pseudocode of slide.
+
+Line 87 - 135
+EE599-Sorting.pdf Professor Shahin Nazarian. Slide page 34-35;
+In order to write merge sort algorithm, I refer the pseudocode of slide.
+
+Line 138 - 158
+EE599-Sorting.pdf Professor Shahin Nazarian. Slide page 44-45;
+In order to write quick sort algorithm, I refer the pseudocode of slide.
+   
+Line 162 - 198
+EE599- Shahin Nazarian. Slide page 44-45;
+In order to write radixSort algorithm, I refer the Alg.: Sorting Algorithms  and Radix Sort
+(rs.cpp) 

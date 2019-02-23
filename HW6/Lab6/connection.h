@@ -20,6 +20,7 @@ public:
     Connection();
     Connection(string filename);
     Connection(string f_name, string l_name, string bdate);
+    ~Connection();
 	void print_connection();
 	void set_connection();
 	void set_connection(string filename);

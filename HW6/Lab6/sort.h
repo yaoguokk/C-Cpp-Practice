@@ -3,7 +3,9 @@
 
 #include <iostream>
 #include <fstream>
-#include <string>
+#include <cstring>
+#include <stdlib.h>
+
 using namespace std;
 /*
 In this part you are supposed to write a class called Sort. The Sort class gets the integer data from an input file,
