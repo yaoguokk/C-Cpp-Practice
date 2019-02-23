@@ -1,0 +1,6 @@
+Please type a number: Input number: 
+12.345
+Square: 
+152.399025
+Cube: 
+1881.366

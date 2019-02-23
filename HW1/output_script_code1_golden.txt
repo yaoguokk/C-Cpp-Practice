@@ -1,0 +1,18 @@
+Please type a number: Input number: 
+12.345
+Square: 
+152.399025
+Cube: 
+1881.366
+Please type a number: Input number: 
+1.2
+Square: 
+1.44
+Cube: 
+1.728
+Please type a number: Input number: 
+-1
+Square: 
+1
+Cube: 
+-1.000
