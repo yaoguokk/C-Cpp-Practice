@@ -1,0 +1,118 @@
+File: HW7-1&2.py HW7-3bc.cpp    
+Author: YaoGuo  
+USCID: 2176023892  
+Email: yaog@usc.edu  
+Description: 
+HW7-1&2.cpp 
+1) Implement an SLL in Python (HW7-1&2.py) with add and remove to the back and front methods.
+
+2) Following problem 1, write a method that reverses the SLL items in pairs, i.e., it reverses the position of items 1 and 2; also items 3 and 4; ..items i and i+1, etc. If the size of the list is odd, the last item would stay in position.
+
+HW7-3bc.cpp
+1) Flattern a multi dimension DLL into a singular DLL   
+
+2) In the flattened DLL, remove any duplicates.
+
+
+Reference:
+
+Line 327 - 346
+EE599-Sorting.pdf Professor Shahin Nazarian. Slide page 44-45;
+In order to write quick sort algorithm, I refer the pseudocode of slide.
+
+Pseudocode:
+
+pseudocode for Flattern MDLL into singular DLL
+Procedure flatternALL(MDLL* head):
+    if head not NULL do
+        head->mark=1
+    end if 
+    if this node parent is not NULL
+    if(head->parent!=NULL AND (head->parent->mark==0) do
+        findtail = getTail(head->parent);
+        findhead = getHead(head->parent);
+        if(findhead->mark==0) do
+            insert the new DLL to the parent DLL
+            findhead->prev = head;
+            findtail->next = head->next;
+            head->next->prev = findtail;
+            head->next = findhead;
+            flatternALL(findhead);  
+        enf if
+    end if 
+
+    if this node child is not NULL
+    if (head->child!=NULL) AND (head->child->mark==0) do
+        findtail = getTail(head->child);
+        findhead = getHead(head->child);        
+        if(findhead->mark==0) do
+            findhead->prev = head;
+            findtail->next = head->next;
+            head->next->prev = findtail;
+            head->next = findhead;
+            flatternALL(findhead);
+        end if
+        flatternALL(head->next);
+    end if
+
+pseudocode for delete duplicates in DLL
+    set a struct to store each node of connected DLL's index and value;
+    struct Save{
+        int value;
+        int index;
+    }
+
+    MDLL *temp = list.getHead();
+    count=0;
+    vector<Save> newvector;
+    copy the LL with its index and value
+    while(temp!=NULL){
+        Save s;
+        s.val=temp->val;
+        s.index=count;
+        newvector.push_back(s);
+        count++;
+        temp=temp->next;
+    }
+
+    //sort the vector
+    quicksort(newvector);
+    //delete the duplicates 
+    for i from 1 to count{
+       if(newvector[i].val==newvector[i-1].val) do
+           remove the value newvector[i].val in DLL;
+       end if
+    cout<<newvector[i].val<<" ";
+    end for
+
+Procedure removeValue:
+    //if remove the empty LL or the index is out of range return false
+    if this->head== NULL do
+        return false;
+    end if
+    MDLL *temp = head;
+    //if need to remove the first item
+    if value == head->val do
+        head=head->next ;
+        head->prev = NULL;
+        delete temp;
+        return true;
+    end if
+
+    while (temp->next!=NULL) do
+        if(value == temp->val) do
+            temp->prev->next = temp->next;
+            temp->next->prev = temp->prev;
+            delete temp;
+            return true;
+        end if
+        temp = temp->next;
+    end while
+    //if remove the last item
+    if(temp->val == value) do
+        tail = temp->prev;
+        temp->prev->next = NULL;
+        delete temp;
+        return true;
+    end if
+    return false;

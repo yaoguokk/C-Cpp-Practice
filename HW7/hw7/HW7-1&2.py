@@ -91,19 +91,6 @@ class LinkedList:
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
 # Code execution starts here
 if __name__ == '__main__':
     # Start with the empty list
