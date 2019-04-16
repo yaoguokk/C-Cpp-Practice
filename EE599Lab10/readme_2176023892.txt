@@ -1,0 +1,36 @@
+File: EE599_Lab10_part1_2176023892.cpp EE599_Lab10_part1_p2_2176023892.py EE599_Lab10_part2_2176023892.cpp 
+USCID: 2176023892  
+Email: yaog@usc.edu  
+Description: 
+EE599_Lab10_part1_2176023892.cpp
+to read a graph from a input.txt file, and descirbe whether this graph is a valid tree or not.
+EE599_Lab10_part1_p2_2176023892.py
+ a Python code that automatically generates 10 randomly generated undirected graph samples. Some of them could be trees, some could be forests, and some connected with cycles.  Also add a system call in your Python to also call the Graph Valid Checker you had implemented earlier on each one of the 10 graphs. 
+
+the way I choose to generate random graph:
+First I choose random number between 5 to 10 which is the number of nodes I want to generate.
+Then, I generate a connect_table, in this table, all possible connection between two nodes are listed. 
+Third, ranodomly choose without replacement the pairs inside the table to represent the connection among the two nodes.
+Finally, output the pairs to a txt file for the above cpp file to read
+
+reference :
+
+from line 47 to line 79 
+I refer the c++ code from https://www.geeksforgeeks.org/check-given-graph-tree/ 
+geeksforgeeks website to learn how to check if a graph is a valid tree.
+
+
+
+EE599_Lab10_part2_2176023892.cpp
+
+Description:
+Find shortest path using Dynamic Programming
+Gievn a start point and find the shortest path from the start node to any other node of the graph and output the path into a output file
+
+reference:
+from line 49 - line 62
+I refer c++ code from http://www.cplusplus.com/reference/cstring/strtok/ to learn how to split a string and get the number inside the string
+
+from line 90 - line 123
+I refer c++ code from https://www.geeksforgeeks.org/bellman-ford-algorithm-dp-23/ to know how to implement bellman-ford algorithm. This algorithm is used to find the shortest path include nagative distance between two nodes. and also learn how to check a graph contains negative loop.
+

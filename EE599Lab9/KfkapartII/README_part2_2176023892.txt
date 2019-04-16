@@ -1,0 +1,14 @@
+File: EE599_Lab9_part2_FileGene_2176023892.cpp
+USCID: 2176023892  
+Email: yaog@usc.edu  
+Description: 
+
+For the first part, file generating,it will generate a file every 5 seconds. 
+Need to generate 20 such files. The first line of each file should have a topic name which is selected randomly from these 4 available options: INFO, WARN, ERROR and FATAL.  The second line of each file should have a random number generated between 1 and 1000 which represents the error type index. The files should be named as “logfile-YYYYMMDD-HHMMSS.txt”.
+
+Reference 
+Line11 - line18
+https://stackoverflow.com/questions/16357999/current-date-and-time-as-string
+Author: Max, May,3rd,2013 
+Thanks to Max, his answer gives me clue about how to generate the string which contains data.
+
